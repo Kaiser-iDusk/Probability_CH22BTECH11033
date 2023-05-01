@@ -1,0 +1,81 @@
+\documentclass[journal,12pt,two column]{IEEEtran}
+%\usepackage{setspace}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage[cmex10]{amsmath}
+\usepackage{amsthm}
+\usepackage[export]{adjustbox}
+\usepackage{bm}
+\def\inputGnumericTable{} 
+
+\usepackage[latin1]{inputenc}                                 
+\usepackage{color}                                            
+\usepackage{array} 
+\usepackage{longtable} 
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}  
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{color}                                            %%
+\usepackage{array}                                            %%
+\usepackage{caption} 
+\usepackage{graphicx}
+
+\title{A1110 Assignment 1 \\ 11.16.4.9}
+\author{SHIRSENDU PAL \\ CH22BTECH11033 \\
+        \thanks{*The student is from Department of Chemical Engineering, Indian Institute of Technology, Hydeabad. e-mail: ch22btech11033@iith.ac.in}}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+\newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
+\newcommand*{\comb}[1][-1mu]{\permcomb[#1]{C}}
+\renewcommand{\thetable}{\arabic{table}} 
+\newcommand{\question}{\noindent \textbf{Question: }}	
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\begin{document}
+\maketitle
+\question: 16 : If 4-digit numbers greater than 5,000 are randomly formed from the digits 0, 1, 3, 5, and 7, what is the probability of forming a number divisible by 5 when, (i) the digits are repeated? (ii) the repetition of digits is not allowed?\\
+\solution : Let;
+ \begin{align*} 
+    R \coloneqq 
+        \begin{cases}
+            1, & \text{if repetition allowed}\\
+            0, & \text{if repetition not allowed}\\
+        \end{cases}
+    \\ \\
+    T \coloneqq \{0, 1, 3, 5, 7\}\\ \\
+    S \coloneqq \{x \mid (x \geq 5001) \land (\operatorname{digits}(x) \in T)\}
+ \end{align*}
+ \begin{align*}
+ 	\therefore \mid S \mid = 2*5^3 -1 = 249 \\  
+ \end{align*}
+ $\because$ 2 choices for first position 2 choices for last position and 5 choices for middle position. Also, exclude case for 5000.\\
+ $(i)$ Let:
+  \begin{align*}
+  	E_1 \coloneqq \{x \mid (x \in S)\land(5 \mid x)\land(R = 1)\}\\
+        \therefore \mid E_1\mid = 2 * 2 * 5^2 -1 = 99.
+  \end{align*}
+  \begin{equation*}
+    \pr{E_1} = \frac{\mid E_1 \mid}{\mid S \mid} = \frac{33}{83}.
+  \end{equation*}
+$(ii)$ Let:
+    \begin{align*}
+        E_2 \coloneqq \{x \mid (x \in S)\land(5 \mid x)\land (R=0)\}\\
+        \therefore \mid E_2 \mid = 1*1*^3P_2 + 1*2*^3P_2 = 18
+    \end{align*}
+    \begin{equation*}
+	    \pr{E_2} = \frac{\mid E_2 \mid}{\mid S \mid} = \frac{6}{83}.
+    \end{equation*}
+\end{document}
